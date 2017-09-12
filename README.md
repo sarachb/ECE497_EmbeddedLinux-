@@ -4,5 +4,5 @@
 // Need to put in hw01 directory
 // Needs README file
 // See README requirements
-// Python code is very nice
+// Python code is missing
 // Grade:  0/10
