@@ -17,6 +17,8 @@ while 1:
     pygame.draw.circle(screen, (0,0,0), (x,y), 2)
     pygame.display.update()
     key = pygame.key.get_pressed()
+    #below are the key assignments 
+    # for each movement 
     if key[pygame.K_RIGHT]: x+= 1
     if key[pygame.K_LEFT]: x-=1
     if key[pygame.K_UP]: y-=1
