@@ -12,3 +12,7 @@ To Run:
 1) chmod +x hw2.py
 2) python3 hw2.py
 
+# Comments from Prof. Yoder
+# You should only need to run chmod once.  No need to have the user do it.
+# I wish you had a cleaner way of displaying the table.
+# Grade:  10/10
