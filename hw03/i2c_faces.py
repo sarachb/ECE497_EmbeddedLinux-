@@ -1,0 +1,47 @@
+#!/usr/bin/env pyton3
+#Read a TMP101 sensor
+# sudo apt install python3-smbus
+
+import smbus
+import time
+import Adafruit_BBIO.GPIO as GPIO
+
+bus = smbus.SMBus(1)
+matrix = 0x70
+delay = 0.25
+
+
+#The first byte is GREEN, the second red
+
+           
+smile = [0x00, 0x3c, 0x00, 0x42, 0x28, 0x89, 0x04, 0x85,
+0x04, 0x85, 0x28, 0x89, 0x00, 0x42, 0x00, 0x3c
+]
+frown = [0x3c, 0x00, 0x42, 0x00, 0x85, 0x20, 0x89, 0x00,
+0x89, 0x00, 0x85, 0x20, 0x42, 0x00, 0x3c, 0x00
+]
+neutral = [0x3c, 0x3c, 0x42, 0x42, 0xa9, 0xa9, 0x89, 0x89,
+0x89, 0x89, 0xa9, 0xa9, 0x42, 0x42, 0x3c, 0x3c
+]
+
+
+
+
+# Start oscillator (p10)
+bus.write_byte_data(matrix, 0x21, 0)
+# Disp on, blink off (p11)
+bus.write_byte_data(matrix, 0x81, 0)
+# Full brightness (page 15)
+bus.write_byte_data(matrix, 0xe7, 0)
+
+bus.write_i2c_block_data(matrix, 0, frown)
+time.sleep(delay)
+bus.write_i2c_block_data(matrix, 0, neutral)
+for fade in range(0xe0, 0xef, 1):
+    bus.write_byte_data(matrix, fade, 0)
+    time.sleep(delay/10)
+bus.write_i2c_block_data(matrix, 0, smile)
+
+
+
+# bus.write_i2c_block_data(matrix,0x04, [0xff]);
