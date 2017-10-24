@@ -87,22 +87,19 @@ int main(int argc, char *argv[]) {
     printf("GPIO SETDATAOUTADDR mapped to %p\n", gpio_setdataout_addr_btn);
     printf("GPIO CLEARDATAOUT mapped to %p\n", gpio_cleardataout_addr_btn);
 
-    printf("Start copying GPIO1_25 to GPIO3_01 and GPIO1_17 to GPIO3_02\n");
-    printf("before loop\n");
+    printf("Start mapping GPIO1_25 to GPIO3_01 and GPIO1_17 to GPIO3_02\n");
     while(keepgoing) {
         
     	if (!(*gpio_datain_btn & GPIO1_25)) {
-    	    //printf("b1 pressed\n");
     	    *gpio_setdataout_addr_led= GPIO3_2;
     	} else {
             *gpio_cleardataout_addr_led = GPIO3_2;
     	}
     	
-    	if (!(*gpio_datain_btn & GPIO1_17)) {
-    	    //printf("2 pressed\n");
-    	    *gpio_setdataout_addr_btn= GPIO3_1;
+    	if ((*gpio_datain_btn & GPIO1_17)) {
+    	    *gpio_setdataout_addr_led= GPIO3_1;
     	} else {
-            *gpio_cleardataout_addr_btn = GPIO3_1;
+            *gpio_cleardataout_addr_led = GPIO3_1;
     	}
         usleep(1);
     }
