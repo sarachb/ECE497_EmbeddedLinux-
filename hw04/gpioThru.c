@@ -98,7 +98,7 @@ int main(int argc, char *argv[]) {
             *gpio_cleardataout_addr_led = GPIO3_2;
     	}
     	
-    	if (!(*gpio_datain_btn & GPIO3_20)) {
+    	if (!(*gpio_datain_btn & GPIO1_17)) {
     	    //printf("2 pressed\n");
     	    *gpio_setdataout_addr_btn= GPIO3_1;
     	} else {

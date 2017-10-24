@@ -1,8 +1,15 @@
 GPIO with MMAP:
-All mapping is done throught the GPIO3 port.  
+Button Mapping: GPIO1 port
+LED Mapping: GPIO3 port
 
 To run: 
+For ports 97 and 98
+1)echo "port" > export
+2) if cat direction outputs in 
+    a) echo out direction
 
+3) gcc -o temp gpioThru.c
+4) ./temp
 
 Rotary Encoder:
 The right encoder represent the directions UP and DOWN
