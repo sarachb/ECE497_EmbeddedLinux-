@@ -19,3 +19,8 @@ turning the enconcer left or right, respectively.
 
 To run: python3 hw04.py
 This runs only if you have rcpy installed
+
+// Comments from Prof. Yoder
+// Memory Map info is missing.
+// It works!
+// Grade:  8/10
