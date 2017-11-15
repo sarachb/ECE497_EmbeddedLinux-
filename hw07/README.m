@@ -8,3 +8,8 @@ to be 445ns.
 3) Kernal mapping found in ./gpio_test/gpio_test.ko, 
 but there were some issues so the delay was not measured.
 
+// Comments from Prof. Yoder
+// Min and Max results are missing
+// % CPU is missing
+// Kernel is missing
+// Grade:  5/10

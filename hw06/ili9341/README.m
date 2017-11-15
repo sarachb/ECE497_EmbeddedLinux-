@@ -6,3 +6,7 @@ and also thickening the line.
 To run the code:
 1) make
 2) sudo ./etch-a-sketch
+
+// Comments from Prof. Yoder
+// It works
+// Grade:  10/10
